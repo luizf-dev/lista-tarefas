@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://kit.fontawesome.com/6163288e05.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap" rel="stylesheet" />
+		<title>Lista de Tarefas</title>
+		<link rel="shortcut icon" href="assets/img/list-solid.svg" type="image/x-icon">
+		<link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+		<link rel="stylesheet" href="assets/bootstrap-css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/style.css"/>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="main">
+				<h2>Lista de Tarefas</h2>
+				<div class="row d-flex justify-content-center">			
+					<div class="adding-list-container col-sm-12 col-md-7">	
+						<div class="row">
+							<div class="box1 col-sm-12 col-md-8 col-lg-8">
+								<div class="add input-group mb-3">
+									<input type="text" class="form-control" placeholder="Digite sua tarefa" aria-label="Recipient's username"
+										aria-describedby="button-addon2">
+									<div class="input-group-append">
+										<button class="btn btn-outline  btn-sm" type="button" id="button-addon2">
+											<i class="fas fa-plus-square text-dark"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="filter box2 col-sm-12 col-md-4 col-lg-4">
+								<select class="form-control form-control">
+									<option value="all">Todas</option>
+									<option value="completed">Finalizadas</option>
+									<option value="uncompleted">Pendentes</option>
+								</select>
+							</div>
+						</div>					
+					</div>				
+				</div>
+				<div class="row d-flex justify-content-center">
+					<div class="list-container col-sm-12 col-md-7"></div>
+				</div>	
+			</div>		
+		</div>
+
+		<script src="assets/js/main.js"></script>
+		<script src="assets/bootstrap-js/bootstrap.min.js"></script>
+	</body>
+</html>
