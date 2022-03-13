@@ -7,213 +7,85 @@ body * {
 }
 
 body {
-	background: #0c1b33;
+	background: #272d2d;
 }
 
 h2{
     text-align: center;
     color: #fff;
-	font-size: 1.4em;
-	padding: 20px;
+	font-size: 1.6em;
 }
 
-.main{
-	background: #1c3738;
+.to-do{
+	padding: 30px;
+	margin-top: 20px;
+	box-shadow: 5px 5px 3px #000;
+	background: #0c1b33;
 }
 
-.row{
+.header{
+	margin-bottom: 10px;
+	padding: 5px;
+}
+
+
+.divInsert{
 	padding: 10px;
+	background-color:gray;
+	box-shadow: 3px 3px 10px 0px #000;
+	
 }
 
-.box1,.box2{
-    height: 50px;
-    padding: 5px;
-    margin-bottom: 3px;
+ul{
+	flex-direction: column-reverse;
+	list-style: none;
+	font-size: 1em;
 }
 
-select {
-	border: none;
-	width: 100%;
-	height: 100%;
-	padding: 0 10px;
-	cursor: pointer;
-	transition: 0.3s ease;
+li{
+	list-style-type: none;
 }
 
-select:hover {
-	background-color: #ebebeb;
+.div-li{
+	margin-top: 20px;
+	padding: 10px;
+	background: gray;
+	box-shadow: 3px 3px 10px 0px #000;	
+	border: 1px solid red;
 }
 
-input,
-button {
-	border: none;
+.div-li input{
+	width: 15%;
 	outline: none;
-	height: 100%;
+	accent-color: currentcolor;
 }
 
-button {
-	cursor: pointer;
+.div-li span{	
+	color: #000;
+	font-size: 1.2em;
+	font-weight: 900;
 }
 
-body,
-.adding-list-container,
-.add,
-.fillter,
-.list-container,
-.list,
-.button {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.container {
-	margin: 70px 0;
-	padding: 0 10px;
-	user-select: none;
-	min-width: 500px;
-}
-
-.adding-list-container {
-	align-items: unset;	
-}
-
-
-
-h2 {
-	font-family: "Seaweed Script", cursive;
-	font-size: 30px;
-	color: white;
-	font-weight: 500;
-	margin-bottom: 20px;
-	text-align: center;
-}
-
-.add,
-.list,
-.fillter {
-	border-radius: 3px;
-	overflow: hidden;
-}
-
-.add,
-.list {
-	height: 40px;
-	width: 100%;
-}
-
-.add input {
-	width: 100%;
-	padding: 8px;
-}
-
-.add button {
-	width: 50px;
-	background-color: #0c1b33;
-	font-size: 19px;
-	transition: 0.3s ease;
-}
-
-.add button:hover {
-	background-color: #2a7bbd;
-}
-
-.fillter {
-	position: relative;
-	background-color: white;
-	margin-left: 10px;
-	width: 175px;
-}
-
-.fillter::after {
-	content: "\25BC";
-	pointer-events: none;
+.div-li button{
 	position: absolute;
-	right: 6%;
-	color: #2a7bbd;
+	right: 20px;
+	background: gray;
+}
+.div-li i{
+	font-size: 1.3em;
 }
 
-
-
-.list-container {
-	flex-direction: column;
-	margin-top: 30px;
-}
-
-.list {
-	background-color: white;
-	justify-content: space-between;
-	margin-bottom: 15px;
-	transition: 0.2s ease;
-}
-
-.list.removed {
-	opacity: 0;
-}
-
-.list.completed {
+.line-through{
 	text-decoration: line-through;
-	opacity: 0.3;
 }
 
-.loading {
-	opacity: 0.7;
-}
-
-.list p {
-	height: 100%;
-	font-size: 14px;
-	padding: 10px;
-}
-
-.list .button {
-	height: 100%;
-}
-
-.list .button button {
-	width: 45px;
-	font-size: 11px;
-}
-
-.list .button button:first-child {
-	background-color: #a1ffa1;
-}
-
-.list .button button:last-child {
-	background-color: #ff8080;
-}
-
-@media screen and (max-width: 564px) {
-	.container {
-		min-width: 400px;
-	}
-}
-
-@media screen and (max-width: 420px) {
-	.container {
-		min-width: 350px;
-	}
-
-	.main{
-		padding: 15px;
-		margin: 10px;
-	}
-}
-
-@media screen and (max-width: 300px) {
-	.container {
-		min-width: 320px;
-		padding: 0 20px;
-		margin: 10px;
-	}
-
-	.container h2 {
-		font-size: 20px;
-	}
-
-	.main{
-		padding: 5px;
-	}
 
 
-}
+
+
+
+
+
+
+
+

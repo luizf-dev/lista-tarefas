@@ -13,37 +13,25 @@
 	</head>
 
 	<body>
-		<div class="container">
-			<div class="main">
-				<h2>Lista de Tarefas</h2>
-				<div class="row d-flex justify-content-center">			
-					<div class="adding-list-container col-sm-12 col-md-7">	
-						<div class="row">
-							<div class="box1 col-sm-12 col-md-8 col-lg-8">
-								<div class="add input-group mb-3">
-									<input type="text" class="form-control" placeholder="Digite sua tarefa" aria-label="Recipient's username"
-										aria-describedby="button-addon2">
-									<div class="input-group-append">
-										<button class="btn btn-outline  btn-sm" type="button" id="button-addon2">
-											<i class="fas fa-plus-square text-dark"></i>
-										</button>
-									</div>
-								</div>
-							</div>
-							<div class="filter box2 col-sm-12 col-md-4 col-lg-4">
-								<select class="form-control form-control">
-									<option value="all">Todas</option>
-									<option value="completed">Finalizadas</option>
-									<option value="uncompleted">Pendentes</option>
-								</select>
-							</div>
-						</div>					
-					</div>				
+		<div class="container d-flex justify-content-center">
+			<div class="row to-do col-sm-12 col-md-6 d-flex justify-content-center">			
+				<div class="header col-sm-12 col-md-8">
+					<h2>Lista de Tarefas <button class="btn btn-success btn-sm delete"><i class="fas fa-trash"></i></button></h2>					
 				</div>
-				<div class="row d-flex justify-content-center">
-					<div class="list-container col-sm-12 col-md-7"></div>
-				</div>	
-			</div>		
+				<div class="divInsert input-group  mb-3 col-sm-12 col-md-12">
+					<input type="text" class="form-control textInsert" placeholder="Digite sua tarefa" autofocus aria-label="Recipient's username" aria-describedby="button-addon2">
+					<div class="input-group-append">
+					  <button class="btn btn-outline-secondary bg-success border-0" type="button" id="button-addon2"><i class="fas fa-plus-square text-white"></i></button>
+					</div>
+				</div>
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="col-sm-12 col-md-12">
+							<ul></ul>
+						</div>
+					</div>
+				</div>						
+			</div>			
 		</div>
 
 		<script src="assets/js/main.js"></script>
