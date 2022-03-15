@@ -7,7 +7,7 @@ body * {
 }
 
 body {
-	background: #272d2d;
+	background: #000;
 }
 
 h2{
@@ -64,7 +64,7 @@ li{
 
 .div-li span{	
 	color: #000;
-	font-size: 1.1em;
+	font-size: 1.3em;
 	font-weight: 900;
 	margin-left: -4px;
 }
@@ -74,6 +74,7 @@ li{
 	right: 3px;
 	background: #fff;
 	height: 30px;
+	margin-top: -5px;
 }
 .div-li i{
 	font-size: 1.2em;
