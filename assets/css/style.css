@@ -7,7 +7,7 @@ body * {
 }
 
 body {
-	background: #000;
+	background: rgb(5,34,34);
 }
 
 h2{
@@ -20,7 +20,7 @@ h2{
 	padding: 30px;
 	margin-top: 20px;
 	box-shadow: 5px 5px 3px #000;
-	background: #0c1b33;
+	background: #16384c;
 }
 
 .header{
@@ -30,9 +30,10 @@ h2{
 
 
 .divInsert{
-	padding: 10px;
-	background-color:gray;
-	box-shadow: 3px 3px 10px 0px #000;
+	padding: 8px;
+	background-color: rgb(0,0,0,0.1);
+	box-shadow: 3px 3px 2px #000;
+	border: 1px solid #000;
 	
 }
 
@@ -50,7 +51,7 @@ li{
 	padding: 8px;
 	margin-top: 10px;
 	background: #fff;
-	box-shadow: 3px 3px 10px 0px #000;	
+	box-shadow: 3px 3px 2px #000;	
 	margin-left: -15px;
 	margin-right: -15px;
 }
