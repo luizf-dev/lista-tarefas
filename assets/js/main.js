@@ -3,6 +3,7 @@ const btnInsert = document.querySelector('.divInsert button')
 const btnDeleteAll = document.querySelector('.header button')
 const ul = document.querySelector('ul')
 
+
 var itensDB = []
 
 btnDeleteAll.onclick = () => {
@@ -48,10 +49,11 @@ function loadItens() {
 function insertItemTela(text, status, i) {
   const li = document.createElement('li')
   
+  
   li.innerHTML = `
     <div class="div-li">
       <input type="checkbox" ${status} data-i=${i} onchange="done(this, ${i});" />
-      <span data-si=${i}>${text}</span>
+      <span id='tarefa-1' data-si=${i}>${text}</span>
       <button class="btn" onclick="removeItem(${i})" data-i=${i}><i class='fas fa-trash text-danger'></i></button>
     </div>
     `
@@ -64,6 +66,7 @@ function insertItemTela(text, status, i) {
   }
 
   texto.value = ''
+  
 }
 
 function done(chk, i) {
