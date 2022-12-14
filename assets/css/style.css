@@ -14,13 +14,16 @@ body {
 h2{
     text-align: center;
     color: #fff;
-	font-size: 1.2em;
+	font-size: 1.5em;
+	text-shadow: 2px 1px 1px #000;
+	font-weight: 900;
 }
 
 .to-do{
 	padding: 4px;
-	background: rgb(54, 53, 53);
+	background: #003868;
 	margin: 5px;	
+	border: 2px solid #000;
 }
 
 .header{
@@ -38,8 +41,6 @@ h2{
 	padding: 1px;
 }
 
-
-
 .divInsert input{
 	width: 100%;
 	height: 40px;
@@ -49,7 +50,6 @@ h2{
 .divInsert input:focus{
 	outline: 0;
 }
-
 
 ul{
 	flex-direction: column-reverse;
