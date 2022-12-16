@@ -29,11 +29,6 @@ h2{
 	padding-bottom: 30px
 }
 
-.header{
-	margin-bottom: 10px;
-	padding: 20px;
-}
-
 .divInsert .btn-cad, .divDelete .btn-del {
 	border-radius: 0;
 	width: 100%;
@@ -52,6 +47,7 @@ h2{
 .divInsert, .divDelete{
 	padding: 1px;
 }
+
 
 .divInsert input{
 	width: 100%;

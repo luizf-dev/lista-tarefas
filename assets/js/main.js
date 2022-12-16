@@ -17,7 +17,7 @@ btnDeleteAll.onclick = function(){
     if(itensDB == ''){
       alert('Não existem tarefas salvas para deletar!');
     }else{
-      const confirmDelete = confirm("Deseja mesmo excluir todas as tarefas de uma só vez? Você pode excluir apenas uma tarefa específica!");
+       const confirmDelete = confirm("Atenção!! Deseja mesmo excluir todas as tarefas? Se não deseja excluir todas as tarefas, clique em cancelar e selecione uma tarefa específica para deletar!");
         if(confirmDelete){
           itensDB = [];
           updateDB();
