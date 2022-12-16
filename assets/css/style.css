@@ -17,13 +17,16 @@ h2{
 	font-size: 1.5em;
 	text-shadow: 2px 1px 1px #000;
 	font-weight: 900;
+	margin-bottom: 50px;
+	margin-top: 25px;
 }
 
 .to-do{
 	padding: 4px;
 	background: #003868;
-	margin: 5px;	
+	margin: 5px;
 	border: 2px solid #000;
+	padding-bottom: 30px
 }
 
 .header{
@@ -31,13 +34,22 @@ h2{
 	padding: 20px;
 }
 
-.divInsert .btn-cad{
+.divInsert .btn-cad, .divDelete .btn-del {
 	border-radius: 0;
-	width: 50px;
-	margin-bottom: 5px;
+	width: 100%;
+	margin-bottom: 20px;
+	color:  #fff;
+	font-weight: 900;
+	text-shadow: 2px 1px 1px #000;
+	box-shadow: 5px 5px 3px #000;
 }
 
-.divInsert{
+.divInsert .btn-cad:hover, .divDelete .btn-del:hover {
+	color: #000;
+	text-shadow: none;
+}
+
+.divInsert, .divDelete{
 	padding: 1px;
 }
 
@@ -45,10 +57,12 @@ h2{
 	width: 100%;
 	height: 40px;
 	padding: 5px;
+	box-shadow: 5px 5px 3px #000;
 }
 
 .divInsert input:focus{
 	outline: 0;
+	box-shadow: 5px 5px 3px #000;
 }
 
 ul{
@@ -67,6 +81,7 @@ li{
 	background: #fff;
 	margin-left: -15px;
 	margin-right: -15px;
+	box-shadow: 5px 5px 3px #000;
 }
 
 .div-li input{

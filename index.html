@@ -6,7 +6,7 @@
 		<script src="https://kit.fontawesome.com/6163288e05.js" crossorigin="anonymous"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap" rel="stylesheet" />
 		<title>Lista de Tarefas</title>
-		<link rel="shortcut icon" href="assets/img/list-solid.svg" type="image/x-icon">
+		<link rel="shortcut icon" href="assets/img/clipboard-list-solid.svg" type="image/x-icon">
 		<link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
 		<link rel="stylesheet" href="assets/bootstrap-css/bootstrap.min.css">
 		<link rel="stylesheet" href="assets/css/style.css"/>
@@ -16,14 +16,17 @@
 		<div class="container justify-content-center">
 			<div class="row justify-content-center">
 				<div class="to-do col-sm-12 col-md-6 justify-content-center">			
-					<div class="header col-sm-12 col-md-12">
-						<h2>Lista de Tarefas <button class="btn btn-warning btn-sm"><i class="fas fa-trash"></i></button></h2>													
+					<div class=" col-sm-12 col-md-12">
+						<h2>Lista de Tarefas</h2>													
 					</div>
-					<div class="divInsert">
-						<button class=" btn bg-success border-0 btn-cad" type="button" id="button-addon2"><i class="fas fa-plus-square text-white"></i></button>
+					<div class="divDelete col-sm-12 col-md-12">
+						<button class="btn btn-warning btn-del btn-lg" type="button" id="button-addon2"><i class="fas fa-trash text-danger pl-5"></i> Deletar todas</button> 											
+					</div>
+					<div class="divInsert col-sm-12 col-md-12">
+						<button class=" btn bg-success btn-cad btn-lg" type="button" id="button-addon2"><i class="fas fa-plus-square text-white pl-5"></i> Add Tarefa</button>
 					</div>
 					<div class="divInsert input-group mb-4 col-sm-12 col-md-12">
-						<input type="text" class="textInsert border-0" placeholder="Digite sua tarefa e clique no botão verde para cadastrar" autofocus>
+						<input type="text" class="textInsert border-0" placeholder="Digite sua tarefa e clique em Add Tarefa" autofocus>
 					</div>
 					<div class="container">
 						<div class="row">

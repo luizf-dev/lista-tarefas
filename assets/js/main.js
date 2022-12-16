@@ -1,14 +1,29 @@
 const texto = document.querySelector('input')
 const btnInsert = document.querySelector('.divInsert button')
-const btnDeleteAll = document.querySelector('.header button')
+const btnDeleteAll = document.querySelector('.divDelete button')
 const ul = document.querySelector('ul')
+
 
 
 var itensDB = []
 
-btnDeleteAll.onclick = () => {
+/*btnDeleteAll.onclick = () => {
   itensDB = []
   updateDB()
+}*/
+
+btnDeleteAll.onclick = function(){
+
+    if(itensDB == ''){
+      alert('Não existem tarefas salvas para deletar!');
+    }else{
+      const confirmDelete = confirm("Deseja mesmo excluir todas as tarefas de uma só vez? Você pode excluir apenas uma tarefa específica!");
+        if(confirmDelete){
+          itensDB = [];
+          updateDB();
+          window.location.reload();
+        }
+    }  
 }
 
 texto.addEventListener('keypress', e => {
@@ -18,9 +33,16 @@ texto.addEventListener('keypress', e => {
 })
 
 btnInsert.onclick = () => {
+
+  if(texto.value == ""){
+    alert("Digite alguma tarefa válida!");
+  }else if(texto.value != ""){
+    setItemDB()    
+  }
+  /*
   if (texto.value != '') {
     setItemDB()
-  }
+  }*/
 }
 
 function setItemDB() {
@@ -28,6 +50,8 @@ function setItemDB() {
     alert('Limite máximo de 200 itens atingido! Exclua algumas tarefas! ')
     return
   }
+
+
 
   itensDB.push({ 'item': texto.value, 'status': '' })
   updateDB()
