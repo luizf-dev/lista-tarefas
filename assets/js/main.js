@@ -7,22 +7,35 @@ const ul = document.querySelector('ul')
 
 var itensDB = []
 
-/*btnDeleteAll.onclick = () => {
-  itensDB = []
-  updateDB()
-}*/
+
 
 btnDeleteAll.onclick = function(){
 
     if(itensDB == ''){
-      alert('Não existem tarefas salvas para deletar!');
+      swal("Ops!", "Não existem tarefas salvas para deletar!", "info");
     }else{
-       const confirmDelete = confirm("Atenção!! Deseja mesmo excluir todas as tarefas? Se não deseja excluir todas as tarefas, clique em cancelar e selecione uma tarefa específica para deletar!");
-        if(confirmDelete){
+      /* const confirmDelete = confirm("Atenção!! Deseja mesmo excluir todas as tarefas? Se não deseja excluir todas as tarefas, clique em cancelar e selecione uma tarefa específica para deletar!");*/
+      const confirmDelete = swal({
+        title: "Deseja excluir tudo?",
+        text: "Você está prestes a deletar todas as tarefas!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((confirmDelete) => {
+        if (confirmDelete) {
+          swal("Todas as suas tarefas foram deletadas!", {
+            icon: "success",
+          }); 
           itensDB = [];
           updateDB();
-          window.location.reload();
+          /*window.location.reload();         */
+        } else {
+          swal("Suas tarefas estão a salvo!", {
+            icon: "success",
+          });  
         }
+      }); 
     }  
 }
 
@@ -35,26 +48,21 @@ texto.addEventListener('keypress', e => {
 btnInsert.onclick = () => {
 
   if(texto.value == ""){
-    alert("Digite alguma tarefa válida!");
+    swal("Ops! :(", "Preencha os campos para cadastrar uma tarefa válida!", "error");
   }else if(texto.value != ""){
-    setItemDB()    
+    setItemDB()  
   }
-  /*
-  if (texto.value != '') {
-    setItemDB()
-  }*/
 }
 
 function setItemDB() {
-  if (itensDB.length >= 200) {
-    alert('Limite máximo de 200 itens atingido! Exclua algumas tarefas! ')
-    return
+  if (itensDB.length >= 20) {
+    swal("Limite máximo de 20 tarefas!", "Exclua algumas tarefas!", "error");
+    return    
+  }else{
+    itensDB.push({ 'item': texto.value, 'status': '' })
+    swal("Sucesso", "Sua tarefa foi cadastrada com sucesso!", "success");
+    updateDB()
   }
-
-
-
-  itensDB.push({ 'item': texto.value, 'status': '' })
-  updateDB()
 }
 
 function updateDB() {
@@ -105,8 +113,31 @@ function done(chk, i) {
 }
 
 function removeItem(i) {
-  itensDB.splice(i, 1)
-  updateDB()
-}
+    // Exibe um SweetAlert de confirmação
+    swal({
+      title: "Tem certeza?",
+      text: "Você deseja remover esta tarefa?",
+      icon: "warning",
+      buttons: ["Cancelar", "Remover"],
+      dangerMode: true
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        // Se o usuário clicar em "Remover", a tarefa será excluída
+        itensDB.splice(i, 1);
+        updateDB();
+        // Exibe um SweetAlert de sucesso após a remoção
+        swal("Tarefa removida com sucesso!", {
+          icon: "success",
+        });
+      } else {
+        // Se o usuário cancelar, não faz nada
+        swal("Sua tarefa está a salvo!", {
+          icon: "info",
+        });
+      }
+    });
+  }  
 
 loadItens()
+
