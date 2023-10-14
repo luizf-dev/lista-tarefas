@@ -8,29 +8,47 @@ var itensDB = [];
 btnDeleteAll.onclick = function(){
 
     if(itensDB == ''){
-      swal("Ops!", "Não existem tarefas salvas para deletar!", "info");
-    }else{
-      const confirmDelete = swal({
-        title: "Deseja excluir tudo?",
-        text: "Você está prestes a deletar todas as tarefas!",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Ops! :(',
+        text: 'Não existem tarefas salvas para deletar!',
+        showConfirmButton: false,
+        timer: 4000
       })
-      .then((confirmDelete) => {
-        if (confirmDelete) {
-          swal("Todas as suas tarefas foram deletadas!", {
-            icon: "success",
-          }); 
+    }else{
+      const deleteAll = Swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger'
+        }    
+      })  
+      deleteAll.fire({
+        title: 'Deseja deletar todas as tarefas?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Sim, deletar!',
+        cancelButtonText: 'Não, cancelar!',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Se o usuário clicar em "deletar", todas as tarefa serão excluídas
           itensDB = [];
           updateDB();
-          /*window.location.reload();         */
-        } else {
-          swal("Suas tarefas estão a salvo!", {
-            icon: "success",
-          });  
+          deleteAll.fire(
+            'Deletado!',
+            'Todas as tarefas foram apagadas!',
+            'success'
+          )
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          deleteAll.fire(
+            'Cancelado!',
+            'Suas tarefas estão salvas! :)',
+            'success'
+          )
         }
-      }); 
+      })   
+      
     }  
 }
 
@@ -43,19 +61,39 @@ texto.addEventListener('keypress', e => {
 btnInsert.onclick = () => {
 
   if(texto.value == ""){
-    swal("Ops! :(", "Preencha os campos para cadastrar uma tarefa válida!", "error");
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: 'Ops!',
+      text: 'Preencha o campo corretamente!',
+      showConfirmButton: false,
+      timer: 4000
+    })
   }else if(texto.value != ""){
     setItemDB()  
   }
 }
 
 function setItemDB() {
-  if (itensDB.length >= 20) {
-    swal("Limite máximo de 20 tarefas!", "Exclua algumas tarefas!", "error");
+  if (itensDB.length >= 200) {
+    Swal.fire({
+      position: 'center',
+      icon: 'warning',
+      title: 'Limite de 200 tarefas atingido!',
+      text: 'Exclua algumas tarefas!',
+      showConfirmButton: false,
+      timer: 4000
+    }) 
     return    
   }else{
     itensDB.push({ 'item': texto.value, 'status': '' })
-    swal("Sucesso", "Sua tarefa foi cadastrada com sucesso!", "success");
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Sua tarefa foi salva!',
+      showConfirmButton: false,
+      timer: 3000
+    })    
     updateDB()
   }
 }
@@ -92,8 +130,7 @@ function insertItemTela(text, status, i) {
     document.querySelector(`[data-si="${i}"]`).classList.remove('line-through')
   }
 
-  texto.value = ''
-  
+  texto.value = '';  
 }
 
 function done(chk, i) {
@@ -108,31 +145,38 @@ function done(chk, i) {
 }
 
 function removeItem(i) {
-    // Exibe um SweetAlert de confirmação
-    swal({
-      title: "Tem certeza?",
-      text: "Você deseja remover esta tarefa?",
-      icon: "warning",
-      buttons: ["Cancelar", "Remover"],
-      dangerMode: true
-    })
-    .then((willDelete) => {
-      if (willDelete) {
-        // Se o usuário clicar em "Remover", a tarefa será excluída
-        itensDB.splice(i, 1);
-        updateDB();
-        // Exibe um SweetAlert de sucesso após a remoção
-        swal("Tarefa removida com sucesso!", {
-          icon: "success",
-        });
-      } else {
-        // Se o usuário cancelar, não faz nada
-        swal("Sua tarefa está a salvo!", {
-          icon: "info",
-        });
-      }
-    });
-  }  
+  const removeItens = Swal.mixin({
+    customClass: {
+      confirmButton: 'btn btn-success',
+      cancelButton: 'btn btn-danger'
+    }    
+  })  
+  removeItens.fire({
+    title: 'Deseja excluir o item?',
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonText: 'Sim, deletar!',
+    cancelButtonText: 'Não, cancelar!',
+    reverseButtons: true
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Se o usuário clicar em "Remover", a tarefa será excluída
+      itensDB.splice(i, 1);
+      updateDB();
+      removeItens.fire(
+        'Deletado!',
+        'Sua tarefa foi apagada!',
+        'success'
+      )
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
+      removeItens.fire(
+        'Cancelado!',
+        'Sua tarefa está salva! :)',
+        'success'
+      )
+    }
+  })    
+}  
 
 loadItens()
 

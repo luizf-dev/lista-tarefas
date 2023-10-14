@@ -9,13 +9,12 @@ body * {
 body {
 	background: rgba(40, 44, 52, 1);
 }
-
+  
 
 h2{
     text-align: center;
     color: #fff;
 	font-size: 1.5em;
-	text-shadow: 2px 1px 1px #000;
 	font-weight: 900;
 	margin-bottom: 50px;
 	margin-top: 25px;
