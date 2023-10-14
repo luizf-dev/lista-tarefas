@@ -3,18 +3,13 @@ const btnInsert = document.querySelector('.divInsert button')
 const btnDeleteAll = document.querySelector('.divDelete button')
 const ul = document.querySelector('ul')
 
-
-
-var itensDB = []
-
-
+var itensDB = [];
 
 btnDeleteAll.onclick = function(){
 
     if(itensDB == ''){
       swal("Ops!", "Não existem tarefas salvas para deletar!", "info");
     }else{
-      /* const confirmDelete = confirm("Atenção!! Deseja mesmo excluir todas as tarefas? Se não deseja excluir todas as tarefas, clique em cancelar e selecione uma tarefa específica para deletar!");*/
       const confirmDelete = swal({
         title: "Deseja excluir tudo?",
         text: "Você está prestes a deletar todas as tarefas!",
