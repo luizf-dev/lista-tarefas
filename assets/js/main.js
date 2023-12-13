@@ -126,9 +126,10 @@ function insertItemTela(text, status, i) {
 
   if (status) {
     document.querySelector(`[data-si="${i}"]`).classList.add('line-through');
-    document.querySelector(`.div-li`).classList.add('bg');
+    
   } else {
     document.querySelector(`[data-si="${i}"]`).classList.remove('line-through')
+    
   }
 
   texto.value = '';  

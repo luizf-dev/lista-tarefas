@@ -13,17 +13,14 @@ body {
 }
 
 img{
-	width: 60px;
-}
-  
+	width: 30px;
+}  
 
 h2{
     text-align: center;
     color: #fff;
 	font-size: 1.5em;
 	font-weight: 900;
-	margin-bottom: 50px;
-	margin-top: 25px;
 }
 
 .to-do{
