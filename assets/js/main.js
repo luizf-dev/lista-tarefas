@@ -119,13 +119,14 @@ function insertItemTela(text, status, i) {
     <div class="div-li">
       <input type="checkbox" ${status} data-i=${i} onchange="done(this, ${i});" />
       <span id='tarefa-1' data-si=${i}>${text}</span>
-      <button class="btn" onclick="removeItem(${i})" data-i=${i}><i class='fas fa-trash text-danger'></i></button>
+      <button class="btn" onclick="removeItem(${i})" data-i=${i}><i class='fas fa-trash'></i></button>
     </div>
     `
   ul.appendChild(li)
 
   if (status) {
-    document.querySelector(`[data-si="${i}"]`).classList.add('line-through')
+    document.querySelector(`[data-si="${i}"]`).classList.add('line-through');
+    document.querySelector(`.div-li`).classList.add('bg');
   } else {
     document.querySelector(`[data-si="${i}"]`).classList.remove('line-through')
   }
