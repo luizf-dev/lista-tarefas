@@ -42,7 +42,7 @@ btnDeleteAll.onclick = function(){
           )
         } else if (result.dismiss === Swal.DismissReason.cancel) {
           deleteAll.fire(
-            'Cancelado!',
+            'Tudo ok!',
             'Suas tarefas estão salvas! :)',
             'success'
           )
@@ -116,7 +116,7 @@ function insertItemTela(text, status, i) {
   
   
   li.innerHTML = `
-    <div class="div-li">
+    <div id='tasks' class="div-li">
       <input type="checkbox" ${status} data-i=${i} onchange="done(this, ${i});" />
       <span id='tarefa-1' data-si=${i}>${text}</span>
       <button class="btn" onclick="removeItem(${i})" data-i=${i}><i class='fas fa-trash'></i></button>
@@ -124,12 +124,16 @@ function insertItemTela(text, status, i) {
     `
   ul.appendChild(li)
 
+  const divTasks = li.querySelector('.div-li');
+
+
   if (status) {
     document.querySelector(`[data-si="${i}"]`).classList.add('line-through');
+    divTasks.classList.add('bg-span-ckeck');
     
   } else {
-    document.querySelector(`[data-si="${i}"]`).classList.remove('line-through')
-    
+    document.querySelector(`[data-si="${i}"]`).classList.remove('line-through');
+    divTasks.classList.remove('bg-span-ckeck');
   }
 
   texto.value = '';  
@@ -139,6 +143,14 @@ function done(chk, i) {
 
   if (chk.checked) {
     itensDB[i].status = 'checked' 
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Ok!',
+      text: 'Você definiu a tarefa como concluída!',
+      showConfirmButton: false,
+      timer: 3000
+    })
   } else {
     itensDB[i].status = '' 
   }
@@ -172,7 +184,7 @@ function removeItem(i) {
       )
     } else if (result.dismiss === Swal.DismissReason.cancel) {
       removeItens.fire(
-        'Cancelado!',
+        'OK!',
         'Sua tarefa está salva! :)',
         'success'
       )

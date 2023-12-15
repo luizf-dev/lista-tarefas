@@ -14,20 +14,21 @@
 	<body>
 		<div class="container justify-content-center">
 			<div class="row justify-content-center">
-				<div class="to-do col-sm-12 col-md-5 justify-content-center">	
-					
-					<div class=" col-sm-12 col-md-12 mb-5 mt-2 d-flex justify-content-center align-items-center">	
+				<div class="to-do col-sm-12 col-md-8 justify-content-center">						
+					<div class="col-sm-12 col-md-12 mb-5 mt-2 d-flex justify-content-center align-items-center">	
 						<img  src="assets/img/icon.png" alt="logo">						
 						<h2>Lista de Tarefas</h2>															
 					</div>
-					<div class="divDelete col-sm-12 col-md-12">
-						<button class="btn btn-del btn-lg text-center" type="button" id="button-addon2"> Deletar todas <i class="fas fa-trash text-danger"></i></button> 											
-					</div>
-					<div class="divInsert col-sm-12 col-md-12">
-						<button class=" btn  btn-cad btn-lg text-center" type="button" id="button-addon2"> Adicionar Tarefa <i class="fas fa-plus-square text-white"></i></button>
+					<div class="div-buttons d-flex justify-content-between">
+						<div class="divInsert col-sm-6 col-md-6">
+							<button class=" btn  btn-cad btn-lg text-center" type="button" id="button-addon2"> Adicionar Tarefa <i class="fas fa-plus-square text-white"></i></button>
+						</div>
+						<div class="divDelete col-sm-6 col-md-6">
+							<button class="btn btn-del btn-lg text-center" type="button" id="button-addon2"> Deletar todas <i class="fas fa-trash text-danger"></i></button> 											
+						</div>
 					</div>
 					<div class="divInsert input-group mb-4 col-sm-12 col-md-12">
-						<input type="text" class="textInsert border-0" placeholder="Digite sua tarefa e clique em Add Tarefa" autofocus>
+						<input type="text" class="textInsert border-0" placeholder="Digite sua tarefa e clique em Adicionar" autofocus>
 					</div>
 					<div class="container">
 						<div class="row">
@@ -35,8 +36,8 @@
 								<ul></ul>
 							</div>
 						</div>
-					</div>						
-				</div>	
+					</div>								
+				</div>					
 			</div>
 		</div>
 		<script src="assets/js/sweet-alert2.js"></script>

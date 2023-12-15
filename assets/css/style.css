@@ -13,7 +13,8 @@ body {
 }
 
 img{
-	width: 30px;
+	width: 60px;
+	height: 60px;
 }  
 
 h2{
@@ -121,6 +122,14 @@ li{
 
 }
 
-.bg{
+.bg-span-ckeck{
 	background: var(--bg-button-del);
+}
+
+
+@media(max-width: 600px){
+
+	.btn-cad, .btn-del{
+		font-size: 0.8em;
+	}
 }
