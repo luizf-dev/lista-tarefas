@@ -1,8 +1,9 @@
 :root{
-	--bg-body: #294d61;
-	--bg-container:  #190019;
-	--bg-button-add: #072e33;
-	--bg-button-del: #F1916d;
+	--bg-body: #686880;
+	--bg-container:  #181830;
+	--bg-button-add: #00c068;
+	--bg-button-del: rgb(185, 93, 93);
 	--bg-tasks: #F5D7DB;
 	--bg-color: #BD83B8;
+	--bg-span-check: #90b0a8;
 }

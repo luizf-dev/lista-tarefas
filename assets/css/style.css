@@ -31,11 +31,17 @@ h2{
 	border: 2px solid #000;
 	padding-bottom: 30px;
 	box-shadow: 5px 5px 3px #000;
+
+
+.div-buttons{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .divInsert .btn-cad, .divDelete .btn-del {
-	border-radius: 0;
-	width: 100%;
+	border-radius: 0.3rem;
+	width: 95%;
 	margin-bottom: 20px;
 	color:  #fff;
 	font-weight: 900;
@@ -123,11 +129,13 @@ li{
 }
 
 .bg-span-ckeck{
-	background: var(--bg-button-del);
+	background: var(--bg-span-check);
 }
 
 
-@media(max-width: 600px){
+
+
+@media screen and (max-width: 600px){
 
 	.btn-cad, .btn-del{
 		font-size: 0.8em;
