@@ -40,8 +40,7 @@ h2{
 }
 
 .divInsert .btn-cad, .divDelete .btn-del {
-	border-radius: 0.3rem;
-	width: 95%;
+	width: 100%;
 	margin-bottom: 20px;
 	color:  #fff;
 	font-weight: 900;

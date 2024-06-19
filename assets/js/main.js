@@ -2,6 +2,7 @@ const texto = document.querySelector('input')
 const btnInsert = document.querySelector('.divInsert button')
 const btnDeleteAll = document.querySelector('.divDelete button')
 const ul = document.querySelector('ul')
+const task = document.getElementById('task');
 
 var itensDB = [];
 
@@ -14,7 +15,7 @@ btnDeleteAll.onclick = function(){
         title: 'Ops! :(',
         text: 'Não existem tarefas salvas para deletar!',
         showConfirmButton: false,
-        timer: 4000
+        timer: 2000
       })
     }else{
       const deleteAll = Swal.mixin({
@@ -24,15 +25,15 @@ btnDeleteAll.onclick = function(){
         }    
       })  
       deleteAll.fire({
-        title: 'Deseja deletar todas as tarefas?',
+        title: 'Esta ação irá deletar todas as tarefas? Você tem certeza?',
         icon: 'question',
         showCancelButton: true,
-        confirmButtonText: 'Sim, deletar!',
-        cancelButtonText: 'Não, cancelar!',
+        confirmButtonText: 'Deletar!',
+        cancelButtonText: 'Cancelar!',
         reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
-          // Se o usuário clicar em "deletar", todas as tarefa serão excluídas
+          //= Se o usuário clicar em "deletar", todas as tarefa serão excluídas
           itensDB = [];
           updateDB();
           deleteAll.fire(
@@ -53,8 +54,17 @@ btnDeleteAll.onclick = function(){
 }
 
 texto.addEventListener('keypress', e => {
-  if (e.key == 'Enter' && texto.value != '') {
+  if (e.key == 'Enter' && texto.value.trim() !== '') {
     setItemDB()
+  }else if(e.key === 'Enter'){
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: 'Ops!',
+      text: 'O campo de entrada está vazio!',
+      showConfirmButton: false,
+      timer: 2000
+    })
   }
 })
 
@@ -67,7 +77,7 @@ btnInsert.onclick = () => {
       title: 'Ops!',
       text: 'Preencha o campo corretamente!',
       showConfirmButton: false,
-      timer: 4000
+      timer: 2000
     })
   }else if(texto.value != ""){
     setItemDB()  
