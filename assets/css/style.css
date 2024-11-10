@@ -31,7 +31,7 @@ h2{
 	border: 2px solid #000;
 	padding-bottom: 30px;
 	box-shadow: 5px 5px 3px #000;
-
+}
 
 .div-buttons{
 	display: flex;
@@ -40,7 +40,7 @@ h2{
 }
 
 .divInsert .btn-cad, .divDelete .btn-del {
-	width: 100%;
+	width: 150px;
 	margin-bottom: 20px;
 	color:  #fff;
 	font-weight: 900;
@@ -113,13 +113,25 @@ li{
 .div-li button{
 	position: absolute;
 	background: transparent;
+	border: none;
 	right: 3px;
 	height: 28px;
-	margin-top: -5px;
+	margin-top: -5px;	
 }
+
+.fa-edit{
+	margin-left: -100px;
+	cursor: pointer;
+	color: green;	
+}
+
+.fa-trash{
+	cursor: pointer;
+	color: red;
+}
+
 .div-li i{
-	font-size: 1em;
-	color: var(--bg-container);
+	font-size: 1.3em;
 }
 
 .line-through{
