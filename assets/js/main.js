@@ -3,6 +3,24 @@ const btnInsert = document.querySelector('.divInsert button')
 const btnDeleteAll = document.querySelector('.divDelete button')
 const ul = document.querySelector('ul')
 const task = document.getElementById('task');
+const editModal = document.getElementById('editModal');
+const editInput = document.getElementById('editInput');
+const updateTarefaBtn = document.getElementById('updateTarefaBtn');
+const closeModal = document.querySelector('.close');
+
+let taskIndexToEdit = null;
+
+//funcao para abrir o modal
+function openEditModal(taskText, index){
+  taskIndexToEdit = index;
+  editInput.value = taskText;
+  editModal.style.display = 'flex';
+}
+
+//fecha o modal
+closeModal.onclick = () => {
+  editModal.style.display = 'none';
+}
 
 var itensDB = [];
 
@@ -129,7 +147,7 @@ function insertItemTela(text, status, i) {
     <div id='tasks' class="div-li">
       <input type="checkbox" ${status} data-i=${i} onchange="done(this, ${i});" />
       <span id='tarefa-1' data-si=${i}>${text}</span>
-      <button  onclick="editItem(${i})" data-i=${i}><i class='fas fa-edit'></i></button>
+      <button class='btn edit-btn'  onclick="openEditModal('${text}', ${i})" data-i=${i}><i class='fas fa-edit'></i></button>
       <button  onclick="removeItem(${i})" data-i=${i}><i class='fas fa-trash'></i></button>
     </div>
     `
@@ -169,51 +187,30 @@ function done(chk, i) {
   updateDB()
 }
 
-function editItem(i) {
-  // Carregar o texto da tarefa selecionada no input
-  texto.value = itensDB[i].item;
-
-  // Alterar o texto do botão para "Atualizar"
-  //btnInsert.textContent = 'Atualizar';
-  btnInsert.innerHTML = 'Atualizar <i class="fas fa-check text-white"></i>';
-
-  // Adicionar o evento para quando pressionar Enter, chamando a função updateTask
-  texto.addEventListener('keypress', (e) => updateTask(e, i));
-  
-  // Alterar o comportamento do botão de "Inserir" para atualizar a tarefa
-  btnInsert.onclick = () => {
-    if (texto.value.trim() !== '') {
-      if (btnInsert.innerHTML.includes('Atualizar')) {
-        // Atualizar a tarefa no banco de dados
-        itensDB[i].item = texto.value;
-        updateDB();
-  
-        // Restaurar o texto do botão para "Adicionar" novamente
-        btnInsert.innerHTML = 'Adicionar <i class="fas fa-plus-square text-white"></i>';
-  
-        // Limpar o campo de texto após atualizar
-        texto.value = ''; 
-  
-        // Atualizar a interface para refletir as mudanças
-        loadItens(); // Atualizar a lista de itens com a tarefa modificada
-  
-      } else {
-        // Adicionar uma nova tarefa
-        setItemDB();
-      }
-    } else {
-      Swal.fire({
-        position: 'center',
-        icon: 'error',
-        title: 'Erro!',
-        text: 'O campo de entrada está vazio!',
-        showConfirmButton: false,
-        timer: 2000
-      });
-    }
-  };
-  
-}
+// Atualizar a tarefa ao clicar no botão de atualizar
+updateTarefaBtn.onclick = () => {
+  if (editInput.value.trim() !== '') {
+    itensDB[taskIndexToEdit].item = editInput.value.trim(); // Atualiza o texto da tarefa no array
+    updateDB(); // Salva no localStorage e atualiza a lista
+    editModal.style.display = 'none'; // Fecha o modal
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Tarefa atualizada com sucesso!',
+      showConfirmButton: false,
+      timer: 2000,
+    });
+  } else {
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: 'Erro!',
+      text: 'O campo de edição está vazio!',
+      showConfirmButton: false,
+      timer: 2000,
+    });
+  }
+};
 
 function removeItem(i) {
   const removeItens = Swal.mixin({

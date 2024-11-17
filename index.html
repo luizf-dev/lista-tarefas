@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="assets/bootstrap-css/bootstrap.min.css">
 		<link rel="stylesheet" href="assets/css/sweetalert2.min.css">
 		<link rel="stylesheet" href="assets/css/style.css"/>
+		<link rel="stylesheet" href="assets/css/modal.css"/>
 	</head>
 
 	<body>
@@ -38,6 +39,15 @@
 						</div>
 					</div>								
 				</div>					
+			</div>
+		</div>
+
+		<div id="editModal" class="modal" style="display: none;">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h2>Editar Tarefa</h2>
+				<input class="input-edit" type="text" id="editInput">
+				<button class="btn-edit" id="updateTarefaBtn">Atualizar </button>
 			</div>
 		</div>
 		<script src="assets/js/sweet-alert2.js"></script>

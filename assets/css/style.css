@@ -122,12 +122,12 @@ li{
 .fa-edit{
 	margin-left: -100px;
 	cursor: pointer;
-	color: green;	
+	color: var(--bg-container);	
 }
 
 .fa-trash{
 	cursor: pointer;
-	color: red;
+	color: var(--bg-button-del);
 }
 
 .div-li i{
