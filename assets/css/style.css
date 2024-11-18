@@ -13,8 +13,8 @@ body {
 }
 
 img{
-	width: 60px;
-	height: 60px;
+	width: 40px;
+	height: 40px;
 }  
 
 h2{
@@ -35,12 +35,13 @@ h2{
 
 .div-buttons{
 	display: flex;
+	width: 100%;
 	justify-content: center;
 	align-items: center;
 }
 
 .divInsert .btn-cad, .divDelete .btn-del {
-	width: 150px;
+	width: 100%;
 	margin-bottom: 20px;
 	color:  #fff;
 	font-weight: 900;
@@ -48,17 +49,14 @@ h2{
 	box-shadow: 5px 5px 3px #000;
 }
 
-.divInsert .btn-cad{
+.btn-cad{
 	background: var(--bg-button-add);
+	min-width: 300px;
 }
 
 .divDelete .btn-del{
 	background: var(--bg-button-del);
-}
-
-.divInsert .btn-cad:hover, .divDelete .btn-del:hover {
-	color: var(--bg-container);
-	text-shadow: none;
+	display: none;
 }
 
 .divInsert, .divDelete{
@@ -88,12 +86,13 @@ li{
 }
 
 .div-li{
-	padding: 8px;
+	display: flex;
+	align-items: center;	
+	padding: 10px;
 	margin-top: 15px;
 	background: var(--bg-tasks);
-	margin-left: -15px;
-	margin-right: -15px;
 	box-shadow: 5px 5px 3px #000;
+	width: 100%;
 }
 
 .div-li input{
@@ -105,9 +104,12 @@ li{
 
 .div-li span{	
 	color: #000;
+	word-wrap: break-word;
+	white-space: normal;
+	flex: 1;
 	font-size: 1em;
 	font-weight: 900;
-	margin-left: -3px;
+	max-width: 70%;	
 }
 
 .div-li button{
@@ -142,8 +144,6 @@ li{
 .bg-span-ckeck{
 	background: var(--bg-span-check);
 }
-
-
 
 
 @media screen and (max-width: 600px){

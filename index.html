@@ -13,12 +13,16 @@
 	</head>
 
 	<body>
-		<div class="container justify-content-center">
+		<div class="container">
 			<div class="row justify-content-center">
 				<div class="to-do col-sm-12 col-md-8 justify-content-center">						
 					<div class="col-sm-12 col-md-12 mb-2 mt-2 d-flex justify-content-center align-items-center">	
 						<img  src="assets/img/icon.png" alt="logo">						
 						<h2>Lista de Tarefas</h2>															
+					</div>
+					
+					<div class="divInsert input-group mb-4 col-sm-12 col-md-12">
+						<input type="text" id="task" class="textInsert border-0" placeholder="Digite sua tarefa e clique em Adicionar" autofocus>
 					</div>
 					<div class="div-buttons">
 						<div class="divInsert">
@@ -28,15 +32,8 @@
 							<button class="btn btn-del btn-lg text-center" type="button" id="button-addon2"> Deletar <i class="fas fa-trash text-danger"></i></button> 											
 						</div>
 					</div>
-					<div class="divInsert input-group mb-4 col-sm-12 col-md-12">
-						<input type="text" id="task" class="textInsert border-0" placeholder="Digite sua tarefa e clique em Adicionar" autofocus>
-					</div>
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-12 col-md-12">
-								<ul></ul>
-							</div>
-						</div>
+					<div>
+						<ul></ul>
 					</div>								
 				</div>					
 			</div>

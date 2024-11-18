@@ -146,8 +146,8 @@ function insertItemTela(text, status, i) {
   li.innerHTML = `
     <div id='tasks' class="div-li">
       <input type="checkbox" ${status} data-i=${i} onchange="done(this, ${i});" />
-      <span id='tarefa-1' data-si=${i}>${text}</span>
-      <button class='btn edit-btn'  onclick="openEditModal('${text}', ${i})" data-i=${i}><i class='fas fa-edit'></i></button>
+      <span id='tarefa-1' data-si=${i}>${text}</span><br>
+      <button class='edit-btn'  onclick="openEditModal('${text}', ${i})" data-i=${i}><i class='fas fa-edit'></i></button>
       <button  onclick="removeItem(${i})" data-i=${i}><i class='fas fa-trash'></i></button>
     </div>
     `
